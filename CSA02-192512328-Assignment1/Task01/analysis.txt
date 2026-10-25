@@ -30,9 +30,9 @@ Problem: Design a reliable electricity billing program for a rural electricity c
 
 Meter readings can be represented as integers or strings.
 
-- Integer representation:** Uses numeric values directly and supports arithmetic operations efficiently.
-- String representation:** Stores digits as characters and requires conversion before arithmetic operations.
+- Integer representation: Uses numeric values directly and supports arithmetic operations efficiently.
+- String representation: Stores digits as characters and requires conversion before arithmetic operations.
 
 5. Time complexity
 
-For integer readings, consumption calculation takes **O(1)** time because it uses a fixed number of arithmetic operations. The space complexity is **O(1)** because only a constant number of variables is needed.
+For integer readings, consumption calculation takes O(1) time because it uses a fixed number of arithmetic operations. The space complexity is O(1) because only a constant number of variables is needed.
