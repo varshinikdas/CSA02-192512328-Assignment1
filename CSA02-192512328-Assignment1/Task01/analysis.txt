@@ -1,0 +1,38 @@
+Task 01 – Problem Analysis
+
+Problem: Design a reliable electricity billing program for a rural electricity co-operative.
+
+1. Inputs
+- Previous meter reading.
+- Current meter reading.
+- Meter readings are stored in a 16-bit unsigned register ranging from 0 to 65535.
+- The meter register can roll over from 65535 to 0.
+
+2. Processing
+- Calculate electricity consumption from the previous and current readings.
+- Handle meter rollover correctly.
+- Apply the billing rules:
+  - Fixed charge: ₹50.
+  - First 100 units: free.
+  - Units 101–200: ₹2.25 per unit.
+  - Units above 200: ₹4.50 per unit.
+- Calculate the final bill accurately to the nearest paisa.
+- Validate user input and handle invalid readings.
+
+3. Outputs
+- Electricity units consumed.
+- Fixed charge.
+- Energy charge.
+- Total bill in rupees and paise.
+- Error message for invalid input.
+
+4. Alternative representation of meter readings
+
+Meter readings can be represented as integers or strings.
+
+- Integer representation:** Uses numeric values directly and supports arithmetic operations efficiently.
+- String representation:** Stores digits as characters and requires conversion before arithmetic operations.
+
+5. Time complexity
+
+For integer readings, consumption calculation takes **O(1)** time because it uses a fixed number of arithmetic operations. The space complexity is **O(1)** because only a constant number of variables is needed.

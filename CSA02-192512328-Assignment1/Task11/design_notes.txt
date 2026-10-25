@@ -1,0 +1,56 @@
+Task 11 – Final Design Recommendations
+
+1. Data Types
+
+- unsigned short: Used for meter readings because the meter register stores non-negative values.
+- unsigned int: Used for electricity consumption, which cannot be negative.
+- long: Used for bill amounts stored in integer paise.
+- long long: Suitable for large accumulated billing totals across many houses.
+- int: Used for ordinary integer values, such as user-entered units.
+
+The program should verify that the meter type supports the required range of 0 to 65535.
+
+2. Constants and Preprocessor Directives
+
+Named constants and macros define tariff values and fixed charges.
+
+- SLAB1_UNITS: 100 units.
+- SLAB2_UNITS: 200 units.
+- RATE2_PAISE: 225 paise per unit.
+- RATE3_PAISE: 450 paise per unit.
+- FIXED_CHARGE_PAISE: 5000 paise.
+
+Using named constants makes the program easier to maintain because tariff changes can be made in one place.
+
+3. Integer Paise Instead of Floating-Point Money
+
+Money is stored in integer paise to avoid floating-point representation errors during billing calculations. The final amount is displayed as rupees and paise.
+
+4. Meter Rollover
+
+The meter is a 16-bit unsigned register. When the reading reaches 65535, the next reading rolls over to 0. Unsigned arithmetic can calculate consumption across rollover when the chosen type is exactly 16 bits.
+
+5. Input Validation
+
+The program should validate user input, reject negative consumption values, check the return value of input functions, and handle invalid text safely.
+
+6. Testing
+
+The program is tested with:
+- Zero units.
+- 100 units.
+- 150 units.
+- 200 units.
+- 350 units.
+- Normal meter readings.
+- Meter rollover from 65400 to 120.
+- Boundary rollover from 65535 to 0.
+- Invalid user input.
+
+7. Future Improvements
+
+Tariff rates can be stored in a configuration file and loaded at runtime. This allows authorized tariff changes without recompiling the program. Additional improvements include separating functions into header and source files, logging billing errors, and adding automated test cases.
+
+Conclusion
+
+The recommended design uses appropriate integer types, integer-paise calculations, named tariff constants, input validation, and rollover testing. These choices improve billing accuracy, reliability, maintainability, and testability.

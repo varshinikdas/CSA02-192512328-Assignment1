@@ -1,0 +1,41 @@
+Task 12 – Smart Meter Design Challenge
+
+1. Problem Description
+
+The smart meter system records electricity usage every 15 minutes. Each house produces 35,040 readings per year. The system must calculate electricity bills using different tariff rates depending on the time of day.
+
+2. Time-of-Day Tariff
+
+Electricity consumed between 6 PM and 10 PM is charged at a rate that is 20 percent higher than the normal tariff. The system must identify the time of each reading and apply the correct rate.
+
+3. Runtime Configuration
+
+Tariff values should be stored in a configuration file instead of being permanently defined using preprocessor macros. The program can read the configuration file when it starts. Authorized users can change the tariff values without recompiling the program.
+
+4. Data Storage
+
+The system should use suitable integer types for energy readings and integer paise for monetary calculations. Reading data should be stored efficiently because each house produces 35,040 readings per year.
+
+5. Billing Process
+
+The system reads meter data and tariff settings, identifies the applicable time period, calculates the energy charge, adds the fixed charge, and produces the final bill.
+
+6. Reliability and Validation
+
+The program should validate configuration values, handle missing or invalid data, prevent arithmetic overflow, and test billing calculations at tariff boundaries.
+
+7. Testing
+
+The system should be tested with readings outside peak hours, readings between 6 PM and 10 PM, tariff changes loaded from a configuration file, and large datasets representing a full year of readings.
+
+8. Advantages
+
+- Tariffs can be changed without recompiling the program.
+- Peak-hour electricity usage is billed according to the specified tariff.
+- Integer-paise calculations support accurate monetary totals.
+- Efficient storage supports large numbers of readings.
+- Input validation improves reliability.
+
+Conclusion
+
+The smart meter design extends the original electricity billing program by introducing time-of-day tariffs, runtime tariff configuration, efficient data handling, and additional validation. These improvements support maintainability, scalability, and reliable billing.
