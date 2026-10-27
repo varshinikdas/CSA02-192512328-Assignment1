@@ -47,6 +47,17 @@ The program is tested with:
 - Boundary rollover from 65535 to 0.
 - Invalid user input.
 
+6. Alternative Concept and Complexity Analysis
+
+Let (t) be the number of tariff values read at program startup.
+
+Reading and validating the tariff configuration takes (O(t)) time and (O(t)) space if all (t) values are stored in memory. If the number of tariff values is small and fixed, the additional startup time and memory use are negligible.
+
+With compiled-in tariff constants, every tariff revision requires recompilation, testing, and redistribution of the executable. With a configuration file, authorised users can revise the tariff values without recompiling, provided the file format and validation rules remain compatible.
+
+The configuration-file approach is therefore recommended for frequent tariff revisions. Its advantages are easier maintenance and reduced redistribution effort. However, configuration validation, access permissions, error handling, and version control must be implemented.
+
+
 7. Future Improvements
 
 Tariff rates can be stored in a configuration file and loaded at runtime. This allows authorized tariff changes without recompiling the program. Additional improvements include separating functions into header and source files, logging billing errors, and adding automated test cases.
