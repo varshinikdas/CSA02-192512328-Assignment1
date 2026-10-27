@@ -90,15 +90,10 @@ gcc -std=c11 -Wall -Wextra main.c -o main
 
 
 
-Run the program using:
+Run the program using: main
 
 
 
-main
-
-
-
-For Task 08, follow the separate preprocessing, compilation, assembly, linking, and execution commands documented for that task.
 
 
 
